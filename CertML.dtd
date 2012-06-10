@@ -1,0 +1,45 @@
+
+<!ELEMENT CERTML  ( exam , questions )>
+
+<!ELEMENT questions  ( question )>
+
+<!ELEMENT question  ( text , answers , reference , media )>
+<!ATTLIST question
+id CDATA #REQUIRED
+section CDATA #REQUIRED
+complexity CDATA #REQUIRED
+correct CDATA #REQUIRED
+>
+
+<!ELEMENT media  EMPTY>
+
+<!ELEMENT reference  ( #PCDATA )>
+
+<!ELEMENT answers  ( option+ )>
+
+<!ELEMENT option  ( #PCDATA )>
+<!ATTLIST option
+value CDATA #REQUIRED
+>
+
+<!ELEMENT text  ( #PCDATA )>
+
+<!ELEMENT exam  ( title , description , keywords , meta+ , section+ )>
+
+<!ELEMENT section  EMPTY>
+<!ATTLIST section
+name CDATA #REQUIRED
+value CDATA #REQUIRED
+>
+
+<!ELEMENT meta  EMPTY>
+<!ATTLIST meta
+name CDATA #REQUIRED
+value CDATA #REQUIRED
+>
+
+<!ELEMENT keywords  ( #PCDATA )>
+
+<!ELEMENT description  ( #PCDATA )>
+
+<!ELEMENT title  ( #PCDATA )>

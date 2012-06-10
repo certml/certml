@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CERTML xsi:noNamespaceSchemaLocation="CertML.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<exam>
+		<title>Sample Mock Exam</title>
+		<description>Exam description</description>
+		<keywords>keywords</keywords>
+		
+	       <meta name="CertAuthority" value="Sample1" />
+	       <meta name="ExamCode" value="SPL-001" />
+	       <meta name="Version" value="1.0" />
+	       <meta name="CreateDate" value="6/7/2012" />
+	       <meta name="LastUpdate" value="6/7/2012" />
+	       <meta name="questions" value="100" />
+	       <meta name="unscored" value="0" />
+	       <meta name="PassingScore" value="75" />
+	       <meta name="time" value="120" />
+	       
+	       
+	       <section id="1" name="section1" value="30"/>
+	       <section id="2" name="section2" value="24" />
+	       <section id="3" name="section3" value="46" />
+	</exam>
+	<questions>
+		<question id="1" section="1" complexity="4" correct="3">
+			<text>Question</text>
+			<answers>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+				<option value="4">Option 4</option>
+			</answers>
+			<reference>Reference book page 13</reference>
+			<media/>
+		</question>
+	</questions>
+</CERTML>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   CertML - Certification Markup Language CertML
+   Created by Hatem Ben Yacoub on 2012-06-07.
+   Version Alpha 1.0
+   Copyright (c) 2012 HBY Consultancy. All rights reserved.
+-->
+<xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="CERTML">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="exam"/>
+				<xsd:element ref="questions"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="questions">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="question"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="question">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="text"/>
+				<xsd:element ref="answers"/>
+				<xsd:element ref="reference"/>
+				<xsd:element ref="media"/>
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string" use="required"/>
+			<xsd:attribute name="section" type="xsd:string" use="required"/>
+			<xsd:attribute name="complexity" type="xsd:string" use="required"/>
+			<xsd:attribute name="correct" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="media">
+		<xsd:complexType/>
+	</xsd:element>
+	<xsd:element name="reference" type="xsd:string"/>
+	<xsd:element name="answers">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="option" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="option">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="value" type="xsd:string" use="required"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="text" type="xsd:string"/>
+	<xsd:element name="exam">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="title"/>
+				<xsd:element ref="description"/>
+				<xsd:element ref="keywords"/>
+				<xsd:element ref="meta" maxOccurs="unbounded"/>
+				<xsd:element ref="section" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="section">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" use="required"/>
+			<xsd:attribute name="value" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="meta">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" use="required"/>
+			<xsd:attribute name="value" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="keywords" type="xsd:string"/>
+	<xsd:element name="description" type="xsd:string"/>
+	<xsd:element name="title" type="xsd:string"/>
+</xsd:schema>
